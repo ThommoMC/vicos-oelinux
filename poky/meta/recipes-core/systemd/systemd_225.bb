@@ -28,7 +28,7 @@ SRCREV = "e1439a1472c5f691733b8ef10e702beac2496a63"
 
 PV = "225+git${SRCPV}"
 
-SRC_URI = "git://github.com/systemd/systemd.git;protocol=git \
+SRC_URI = "git://github.com/systemd/systemd.git;protocol=https;branch=main \
            file://0003-binfmt-Don-t-install-dependency-links-at-install-tim.patch \
            file://0004-configure-Check-for-additional-features-that-uclibc-.patch \
            file://0005-nspawn-Use-execvpe-only-when-libc-supports-it.patch \

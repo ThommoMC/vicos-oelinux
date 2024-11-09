@@ -37,28 +37,30 @@ gen_buildprop() {
    OS_VERSION=`cat ${IMAGE_ROOTFS}/etc/os-version`
    RELEASE_VERSION=`cat ${IMAGE_ROOTFS}/etc/version`
    
+   #disable because victor doesn't exist
+
    # read from /anki/etc/version to prepend build.id
-   VICTOR_BUILD_VERSION=`cat ${IMAGE_ROOTFS}/anki/etc/version`
-   VICTOR_BUILD_REV=`cat ${IMAGE_ROOTFS}/anki/etc/revision`
-   VICTOR_REV_TAG=""
-   if [ ! -z "${VICTOR_BUILD_REV}" ]; then
-      VICTOR_REV_TAG="-${VICTOR_BUILD_REV}"
-   fi
+   #VICTOR_BUILD_VERSION=`cat ${IMAGE_ROOTFS}/anki/etc/version`
+   #VICTOR_BUILD_REV=`cat ${IMAGE_ROOTFS}/anki/etc/revision`
+   #VICTOR_REV_TAG=""
+   #if [ ! -z "${VICTOR_BUILD_REV}" ]; then
+   #   VICTOR_REV_TAG="-${VICTOR_BUILD_REV}"
+   #fi
 
    OS_REV=`cat ${IMAGE_ROOTFS}/etc/os-version-rev`
    REV_TAG=""
    if [ ! -z "${OS_REV}" ]; then
      REV_TAG="-${OS_REV}"
       # ro.revision is used by debuggerd to tag tombstone crash dumps
-      echo "ro.revision=anki-${VICTOR_BUILD_REV}_os-${OS_REV}" >> ${IMAGE_ROOTFS}/build.prop
+      echo "ro.revision=anki-recoverymodefix_os-${OS_REV}" >> ${IMAGE_ROOTFS}/build.prop
    fi
 
    # Combine victor + OS build versions
-   VERSION_ID="v${VICTOR_BUILD_VERSION}_os${OS_VERSION}"
-   BUILD_ID="v${VICTOR_BUILD_VERSION}${VICTOR_REV_TAG}_os${OS_VERSION}${REV_TAG}-${BUILD_TIMESTAMP}"
+   VERSION_ID="vrecoverymodefix_os${OS_VERSION}"
+   BUILD_ID="vrecoverymodefix_os${OS_VERSION}${REV_TAG}-${BUILD_TIMESTAMP}"
 
    echo "ro.anki.version=${OS_VERSION}" >> ${IMAGE_ROOTFS}/build.prop
-   echo "ro.anki.victor.version=${VICTOR_BUILD_VERSION}" >> ${IMAGE_ROOTFS}/build.prop
+   echo "ro.anki.victor.version=recoverymodefix" >> ${IMAGE_ROOTFS}/build.prop
 
    # ro.build.fingerprint is used by debuggerd to tag tombstone crash dumps
    echo "ro.build.fingerprint=${BUILD_ID}" >> ${IMAGE_ROOTFS}/build.prop

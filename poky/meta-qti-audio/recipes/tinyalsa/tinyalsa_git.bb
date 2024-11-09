@@ -7,7 +7,7 @@ ${LICENSE};md5=3775480a712fc46a69647678acb234cb"
 PR = "r1"
 
 SRCREV = "1369a0ff9979cfbdaa0ca88e4696265655cd198b"
-SRC_URI = "git://codeaurora.org/quic/le/platform/external/tinyalsa.git;protocol=git;branch=github/master \
+SRC_URI = "git://git.codelinaro.org/clo/le/platform/external/tinyalsa.git;protocol=https;branch=github/master \
            file://Makefile.am \
            file://configure.ac \
            file://tinyalsa.pc.in \

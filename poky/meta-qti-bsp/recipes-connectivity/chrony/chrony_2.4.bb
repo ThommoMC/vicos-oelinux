@@ -25,12 +25,12 @@ This recipe produces two binary packages: 'chrony' which contains chronyd, \
 the configuration file and the init script, and 'chronyc' which contains \
 the client program only."
 
-HOMEPAGE = "http://chrony.tuxfamily.org/"
+HOMEPAGE = "http://chrony-project.org/"
 SECTION = "net"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=751419260aa954499f7abaabaa882bbe"
 
-SRC_URI = "https://download.tuxfamily.org/chrony/chrony-${PV}.tar.gz \
+SRC_URI = "https://chrony-project.org/releases/chrony-${PV}.tar.gz \
     file://chrony.conf \
     file://chronyd \
 "

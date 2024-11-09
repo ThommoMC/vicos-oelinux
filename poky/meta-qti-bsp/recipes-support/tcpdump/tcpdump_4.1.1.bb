@@ -14,7 +14,7 @@ SRC_URI = " \
 	file://0001-minimal-IEEE802.15.4-allowed.patch \
 	file://ipv6-cross.patch \
 	file://configure.patch \
-        https://raw.githubusercontent.com/openembedded/meta-oe/master/meta-networking/recipes-support/tcpdump/tcpdump/unnecessary-to-check-libpcap.patch;name=patch \
+        https://raw.githubusercontent.com/openembedded/meta-openembedded/53d55216c8c721d3b66ec8f968737bf081def870/meta-networking/recipes-support/tcpdump/tcpdump/unnecessary-to-check-libpcap.patch;name=patch \
 "
 
 inherit autotools-brokensep

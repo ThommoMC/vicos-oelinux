@@ -13,7 +13,7 @@ PR = "r2"
 
 inherit autotools-brokensep
 
-SRC_URI = "http://roy.aydogan.net/dhcpcd/dhcpcd-${PV}.tar.bz2"
+SRC_URI = "https://cflags.cc/roy/dhcpcd/dhcpcd-${PV}.tar.bz2"
 
 do_configure() {
         ./configure --includedir=${STAGING_INCDIR} --bindir=${prefix}/sbin \
